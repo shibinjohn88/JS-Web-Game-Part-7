@@ -10,6 +10,8 @@ const npc = newNonPlayableCharacter(50, 300)
 // npc.walkSouth(1000)
 // npc.walkWest(200)
 
+
+
 async function moveNPC(){
     await npc.walkNorth(1400)
     await npc.walkEast(1200)
@@ -17,10 +19,22 @@ async function moveNPC(){
     await npc.walkEast(1500)
     await npc.walkSouth(1500)
     await npc.walkWest(2700)
-    npc.walkNorth(400)
+    await npc.walkNorth(400)
 }
-moveNPC()
+// moveNPC()
 
+async function loopCharacter() {
+    let i = 0
+    while(true) {
+        await moveNPC()
+        i++
+        console.log(i)
+    }
+
+}
+
+loopCharacter()
+    
 
 
 
